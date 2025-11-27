@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="It Just Crashed">
+	<div class="hero">
+		<span class="large-title">hello world</span>
+		<span>
+			I make things.<br />
+			Usually in Swift.<br />
+			It's sometimes fun.<br />
+			I hate JavaScript.
+		</span>
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		width: auto;
+		height: 300px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+		padding: 32px;
+	}
+
+	.large-title {
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	span {
+		text-align: center;
+	}
+</style>

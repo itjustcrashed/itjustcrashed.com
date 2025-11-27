@@ -1,0 +1,44 @@
+<div class="header">
+    <div class="leading">
+        <a class="title" href="/">It Just Crashed</a>
+    </div>
+    <div class="trailing">
+        <a href="https://github.com/itjustcrashed/">GitHub</a>
+    </div>
+</div>
+
+<style>
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .header {
+        padding: 16px;
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    .leading {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: start;
+        gap: 8px;
+    }
+
+    .trailing {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: end;
+        gap: 8px;
+    }
+
+    .title {
+        font-weight: bold;
+    }
+</style>

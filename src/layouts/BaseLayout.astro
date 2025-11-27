@@ -1,0 +1,26 @@
+---
+import Header from "../components/Header.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>{title}</title>
+	</head>
+	<body>
+		<content>
+			<nav>
+				<Header />
+			</nav>
+			<main>
+				<slot />
+			</main>
+		</content>
+	</body>
+</html>
+
+<style>
+	@import '../styles/global.css';
+</style>
