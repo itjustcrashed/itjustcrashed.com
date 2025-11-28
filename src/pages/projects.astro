@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="It Just Crashed">
+	<div class="hero">
+		<span class="large-title">projects</span>
+		<span>
+			This page is one of my current projects.<br />
+			As you can tell.
+		</span>
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		width: auto;
+		height: 300px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+		padding: 32px;
+	}
+
+	.large-title {
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	span {
+		text-align: center;
+	}
+</style>

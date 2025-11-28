@@ -3,7 +3,14 @@
         <a class="title" href="/">It Just Crashed</a>
     </div>
     <div class="trailing">
-        <a href="https://github.com/itjustcrashed/">GitHub</a>
+        <a href="/blog">Blog</a>
+        <a href="projects">Projects</a>
+        <div class="actions">
+            <a class="btn" href="https://github.com/itjustcrashed/"> GitHub</a>
+            <a class="btn" href="https://bsky.app/profile/itjustcrashed.com">
+                Bluesky
+            </a>
+        </div>
     </div>
 </div>
 
@@ -26,7 +33,7 @@
         flex-grow: 1;
         align-items: center;
         justify-content: start;
-        gap: 8px;
+        gap: 16px;
     }
 
     .trailing {
@@ -35,10 +42,24 @@
         flex-grow: 1;
         align-items: center;
         justify-content: end;
+        gap: 16px;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: row;
         gap: 8px;
     }
 
     .title {
         font-weight: bold;
+    }
+
+    .btn {
+        padding: 8px;
+
+        background-color: var(--foreground);
+        color: var(--background);
+        border-radius: 10px;
     }
 </style>
