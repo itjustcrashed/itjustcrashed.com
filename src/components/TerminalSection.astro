@@ -1,0 +1,41 @@
+---
+const dir = Astro.props.dir;
+const cmd = Astro.props.cmd;
+---
+
+<div class="terminal-section">
+    <div class="terminal-prompt">
+        <span class="terminal-id">ijc@macmini</span>
+        <span class="terminal-dir">{dir}</span>
+        <span class="terminal-cmd">$ {cmd}</span>
+    </div>
+    <slot />
+</div>
+
+<style is:global>
+    .terminal-section {
+        padding: 1rem;
+        border-bottom: 1px solid var(--color-fg-less);
+    }
+    .terminal-prompt {
+        display: flex;
+        gap: 0.6rem;
+        flex-direction: row;
+    }
+    .terminal-id {
+        color: var(--color-secondary);
+        font-weight: bold;
+    }
+    .terminal-dir {
+        color: var(--color-accent);
+        font-weight: bold;
+    }
+    .terminal-cmd {
+        color: var(--color-fg);
+    }
+    a {
+        color: var(--color-accent);
+        text-decoration: underline;
+        font-weight: bold;
+    }
+</style>

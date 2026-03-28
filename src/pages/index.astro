@@ -1,17 +1,73 @@
 ---
-
+import TerminalSection from "../components/TerminalSection.astro";
+import TerminalLayout from "../layouts/TerminalLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<TerminalLayout title="It Just Crashed">
+	<TerminalSection dir="~" cmd="whoami">
+		i'm itjustcrashed. that's totally my legal name, 100% no jokes. my
+		biggest pet peeve is just web dev in general. i literally had to add an empty dictionary to this site's package.json while using deno just to make it work. oh, also i LOVE cats. like
+		a lot.
+		<br><br>
+		i'm a violinist too i guess.
+	</TerminalSection>
+	<TerminalSection dir="~" cmd="cd Developer" />
+	<TerminalSection dir="~/Developer" cmd="ls">
+		rw- <a href="https://www.github.com/itjustcrashed/swift-music">swift-music</a> - a music theory library for the swifties.
+		<br />
+		rwx <a href="https://www.github.com/itjustcrashed/dash">dash</a> - an experimental, capibility-based os written in rust. it's very, very early.
+	</TerminalSection>
+	<TerminalSection dir="~/Developer" cmd="cd" />
+	<TerminalSection dir="~" cmd="cat languages.txt">
+		<b>swift:</b> i like it for higher-level stuff like app development, cli tools,
+		and libraries. it's a delight to write in, and the ecosystem is nice. i'm
+		excited to try swift embedded in the future, too!
+		<br /><br />
+		<b>rust:</b> this one is <i>super</i> nice for anything low-level regarding
+		an application processor. i'm learning a lot of cool things about cs and type
+		theory as i learn the language.
+		<br /><br />
+		<b>objective-c:</b> swift, but <i>exclusively</i> for when swift isn't verbose
+		enough.
+		<br /><br />
+		<b>assembly:</b> this language is oddly fun to create with, even when i have
+		to strangle the linker to make it work. it's a great way to learn about how
+		processors work. also it's, like, the only way to write early boot code without
+		a stack. i'm learning risc-v assembly currently.
+		<br /><br />
+		<b>typescript:</b> NO. WHY DOES EVERY WEB THING NEED TO BE IN THIS GODFORSAKEN
+		LANGUAGE.
+	</TerminalSection>
+	<TerminalSection dir="~" cmd="cat closing.txt">
+		i'm (obvi) on github at <a href="https://www.github.com/itjustcrashed">@itjustcrashed</a>. i'm not open to work or chats currently. i'm also not active on social media, so...
+	</TerminalSection>
+	<TerminalSection dir="~" cmd="swift repl">
+		Welcome to Apple Swift version 6.3.<br>
+		Type :help for assistance.<br>
+		1&gt; <b>import</b> ItJustCrashed<br>
+		2&gt; ItJustCrashed.awesomeness<br>
+		$R0: Int = 1000000<br>
+		3&gt; <span class="blink">&#x2588;</span>
+	</TerminalSection>
+</TerminalLayout>
+
+<style>
+	.blink {
+		animation: blink 1s none infinite;
+	}
+
+	@keyframes blink {
+		0% {
+			opacity: 1;
+		}
+		49.99% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+</style>

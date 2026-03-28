@@ -1,0 +1,11 @@
+{
+  "allowScripts": ["npm:esbuild@0.27.4", "npm:sharp@0.34.5"],
+  "tasks": {
+    "dev": "deno run --allow-all astro dev",
+    "build": "deno run --allow-all astro build",
+    "preview": "deno run --allow-all astro preview"
+  },
+  "imports": {
+    "astro": "npm:astro@6.1.1"
+  }
+}

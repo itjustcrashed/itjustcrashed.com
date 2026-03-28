@@ -1,0 +1,35 @@
+---
+import "../components/Colors.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+    * {
+        font-family: "JetBrains Mono", monospace;
+    }
+
+    body {
+        margin: 0;
+        padding: 1rem;
+
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+    }
+</style>
