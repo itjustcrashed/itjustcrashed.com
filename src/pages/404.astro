@@ -1,0 +1,16 @@
+---
+import TerminalSection from "../components/TerminalSection.astro";
+import TerminalLayout from "../layouts/TerminalLayout.astro";
+
+const path = Astro.url.pathname;
+
+---
+
+<TerminalLayout title="404 Not Found">
+    <TerminalSection dir="~" cmd={`cd ${path}`}>
+        The directory '{path}' does not exist.
+    </TerminalSection>
+    <TerminalSection dir="~" cmd="help">
+        i mean, you could go back to the <a href="/">home page</a> if you clicked a broken link somewhere. alternatively, you could go to the <a href="/blog">blog that you should totally read to become more awesome</a> and endure my rambling for a bit.
+    </TerminalSection>
+</TerminalLayout>
