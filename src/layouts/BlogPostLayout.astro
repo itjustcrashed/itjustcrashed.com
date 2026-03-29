@@ -1,0 +1,37 @@
+---
+import "../components/Colors.astro";
+import TerminalSection from "../components/TerminalSection.astro";
+import TerminalLayout from "./TerminalLayout.astro";
+
+const { frontmatter } = Astro.props;
+const formattedDate = new Date(frontmatter.date)
+    .toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    })
+    .toLowerCase();
+---
+
+<TerminalLayout title={`${frontmatter.title}`}>
+    <TerminalSection dir="~" cmd="./post.md">
+        <br><a href="/blog">blog that you should totally read to become more awesome</a>
+    </TerminalSection>
+    <div class="header">
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.summary}</p>
+        <p><i>{formattedDate}</i></p>
+    </div>
+    <slot />
+</TerminalLayout>
+
+<style is:global>
+    .header {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--color-fg-less);
+    }
+
+    code {
+        font-family: "JetBrains Mono", monospace;
+    }
+</style>

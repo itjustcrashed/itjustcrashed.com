@@ -1,0 +1,59 @@
+---
+import TerminalSection from "../components/TerminalSection.astro";
+import TerminalLayout from "../layouts/TerminalLayout.astro";
+
+const files = import.meta.glob("./blog/*.md", { eager: true }) as Record<
+    string,
+    { frontmatter: { title: string; date: string } }
+>;
+const sortedFiles = Object.entries(files).sort(
+    (a, b) =>
+        new Date(b[1].frontmatter.date).getTime() -
+        new Date(a[1].frontmatter.date).getTime(),
+);
+---
+
+<TerminalLayout
+    title="blog that you should totally read to become more awesome"
+>
+    <TerminalSection dir="/blog" cmd="pwd">
+        <br />
+        <b><i>blog that you should totally read to become more awesome</i></b>
+        <br /><br />
+    </TerminalSection>
+    <TerminalSection dir="/blog" cmd="cat notice.txt">
+        <br />
+        i post here when i feel like it.
+        <br /><br />
+        <a href="/">go back home</a>
+        <br /><br />
+    </TerminalSection>
+    <TerminalSection dir="/blog" cmd="ls">
+        {
+            sortedFiles.map(([path, file]) => {
+                const name =
+                    path.split("/").pop()?.replace(".md", "") || "unknown";
+                const formattedDate = new Date(file.frontmatter.date)
+                    .toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "2-digit",
+                    })
+                    .toLowerCase();
+
+                return (
+                    <div>
+                        r--{" "}
+                        <i>{formattedDate}</i>
+                        <a
+                            href={`/blog/${name}`}
+                            class="text-blue-500 hover:underline"
+                        >
+                            {file.frontmatter.title}
+                        </a>
+                    </div>
+                );
+            })
+        }
+    </TerminalSection>
+</TerminalLayout>
