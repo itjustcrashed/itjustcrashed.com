@@ -29,7 +29,7 @@ so now we've got the newer, fancier, much cooler @c attribute!
 ```swift
 @c
 func greet(_ name: StaticString) {
-    println("Hello, \(name)!")
+    print("Hello, \(name)!")
 }
 ```
 
